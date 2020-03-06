@@ -1,0 +1,582 @@
+/*--------------------------TABLE OF CONTENTS-------------------------*/
+/*
+0. GLOBAL CCS
+1. BANNER IMAGE
+2. EVENTS TITLE
+3. EVENTS DESCRIPTION
+4. EVENTS TABLE
+5. REGISTER MODAL
+5. SPONSOR SECTION
+7. QUOTE SECTION
+8. CAMP RECAP SECTION
+
+*/
+
+/*----------------------------0. GOBAL CSSS--------------------------*/
+
+div{
+	font-family: 'Montserrat';
+}
+
+p {
+	color: #484848;
+    font-size: 16px;
+}
+
+.inactiveLink{
+   pointer-events: none;
+   cursor: default;
+}
+
+.container-fluid{
+	padding: 0px;
+}
+
+.ma-l{
+	margin-left: 15px;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+button:focus{
+	outline:0;
+}
+
+.modal-content  {
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important; 
+}
+
+.m-0 {
+	margin: 0px !important;
+}
+
+.zoomed {
+	max-width: 100%;
+    width: 100%;
+}
+
+.previous-slide {
+	color: black;
+    font-size: 40px;
+    position: absolute;
+    top: 48%;
+    left: 1%;
+}
+
+.next-slide {
+	color: black;
+    font-size: 40px;
+    position: absolute;
+    top: 48%;
+    right: 1%;
+}
+
+.slider-direction {
+	cursor: pointer;
+}
+
+
+.site-btn {
+	background-color: #FD1541;
+	color:white;
+	font-size: 15px;
+    text-transform: capitalize;
+    border: 0px;
+}
+
+.sub-succ-msg, .sub-error-msg {
+	display: none;
+}
+
+
+/*----------------------------1. BANNER IMAGE--------------------------*/
+.bannerimage{
+	padding-top: 120px;
+	background-image: url('../../../assets/events-banner.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	min-height: 250px;
+	width: 100%;
+	color: white;
+}
+
+/*----------------------------2. EVENTS TITLE--------------------------*/
+.eventsTitle{
+	padding-top: 80px;
+}
+
+.eventsTitle h1{
+	color: #252525;
+	font-size: 26px;
+}
+
+
+/*--------------------------3. EVENTS DESCRIPTION------------------------*/
+.eventsDesc{
+	padding-top: 20px;
+	padding-bottom: 60px;
+	color: #484848;
+	font-size: 16px;	
+}
+
+.eventsLocation{
+	color: #252525;
+	padding-bottom: 30px;
+}
+
+.fa-map-marker{
+	color: #fd1541;
+	padding-bottom: 5px;
+}
+
+/*----------------------------4. EVENTS TABLE --------------------------*/
+.campTable{
+	color: #252525;
+	/*border: 1px solid black;*/
+	padding-bottom: 40px;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.ct-pa{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.campTitle h1{
+	color: #fd1541;
+	font-size: 20px;
+	
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-bottom: 0px;
+	border-bottom: 1px solid #0000001a;
+}
+
+.campSubtitle h2{
+	color: white;
+	font-size: 18px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	background-color: #fd1541;
+}
+
+.campDesc{
+	padding-top: 30px;
+}
+
+.registerbtn{
+	background-color: transparent;
+	border: 1px solid #fd1541;
+	color: #fd1541;
+	padding: 6px 13px;
+}
+
+.registerbtn:hover{
+	background-color: #fd1541;
+	color: white;
+	padding: 6px 13px;
+}
+
+
+/*--------------------------5. REGISTER SECTION ------------------------*/
+.register-section {
+	padding-top: 25px;
+    color: #484848;
+    font-size: 16px;
+}
+
+.new-event {
+	background: #FBFBFF;
+	padding: 80px 156px 80px 156px;
+}
+
+.new-event-title {
+	margin-bottom: 30px;
+}
+
+.new-event-title h1 {
+	color: #252525;
+	font-size: 26px;
+	margin-top: 0px;
+}
+
+.mb-2 {
+	margin-bottom: 25px;
+}
+
+.mt-2 {
+	margin-top: 25px;
+}
+
+.mt-5 {
+	margin-top: 50px;
+}
+
+.pt-25 {
+	padding-top: 25px;
+}
+
+.old-events {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+.container-fluid.old-events {
+	padding: 80px 150px;
+}
+
+/*--------------------------5. REGISTER MODAL ------------------------*/
+.open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover {
+    color: #fd1541;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+input{
+	margin: 0px;
+}
+
+#savedSessModalTitle{
+	color: #333333;
+}
+
+.modal-body {
+    position: relative;
+    padding: 15px 25px 15px 25px;
+}
+
+.modal-header {
+    padding: 35px 15px 15px 15px;
+    border-bottom: transparent; 
+}
+
+.registerForm{
+	padding-top: 15px;
+}
+
+.form-group{
+	max-width: 300px;
+	margin-bottom: 30px;
+}
+
+
+.registerForm input{
+	border: none; 
+	border-width: 0; 
+	box-shadow: none;
+	border-bottom: 1px solid #fd1541;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	background-color: rgba(0, 0, 0, 0);	
+}
+
+.registerbtnModal{
+	background-color: #fd1541;
+	/*border: 1px solid #fd1541;*/
+	color: white;
+	border: transparent;
+	padding: 5px 9px;
+}
+
+.regBtnCont{
+	padding-bottom: 20px;
+}
+
+
+/*--------------------------6. SPONSOR SECTION ------------------------*/
+.sponsorBG {
+	background-color: #fff;
+	padding: 0px 32px 40px 32px;
+}
+
+.sponsorBG.odd {
+	background-color: #fbfbff;
+}
+
+.sponLogo1, .sponLogo2 {
+	display: flex;
+	align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.sponLogo1 img{
+	max-width:40%;
+}
+
+.sponLogo2 img{
+	max-width:40%;
+}
+
+.sponTitle h1{
+	color: #252525;
+    font-size: 26px;
+	padding-top: 0px;
+	margin-top: 0px;
+	padding-bottom: 80px;
+	text-align: center;
+}
+
+.sponRow{
+	padding-bottom: 40px;
+}
+
+
+/*----------------------------7. QUOTE SECTION---------------------------*/
+.quoteStyle h1{
+	padding-top: 40px;
+	padding-bottom: 40px;
+	font-size: 20px;
+	color: #484848;
+}
+
+
+
+/*----------------------------8. CAMP RECAP SECTION---------------------------*/
+.videoWrapper {
+	position: relative;
+	margin-bottom: 26px;
+}
+
+/* .videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 90%;
+	height: 100%;
+} */
+
+.vid-pa{
+	margin: auto;
+    float: none;
+}
+
+.gallerypics img{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+}
+
+
+
+.testimonials{
+	padding: 0px 15px 0px 15px;
+    color: #484848;
+    font-size: 12px;
+}
+
+.pa-bt{
+	padding-bottom: 30px;
+}
+
+
+/* MAILCHIMPS */
+.newsletter-section {
+	background-color: #fbfbff !important;
+}
+#mc_embed_signup h2, #mc_embed_signup .mc-field-group label {
+	color: #252525;
+}
+#mc_embed_signup h2 {
+	font-size: 26px;
+	font-weight: 400;
+	margin-bottom: 30px;
+}
+	
+
+#mc_embed_signup .button {
+	background: #fd1541;
+	border-radius: 0px;
+}
+
+#mc_embed_signup .button:hover {
+	background: #204d74;
+}
+
+#mc_embed_signup {
+	padding: 80px 156px !important;
+	background-color: #fbfbff !important;
+}
+
+.odd {
+	background-color: #fbfbff !important;
+}
+
+#mc_embed_signup form {
+	padding: 0px 14px !important;
+}
+
+#mc_embed_signup .clear {
+	margin-top: 25px;
+}
+
+.mt-3 {
+	margin-top: 30px;
+}
+
+.owl-item {
+	margin-right: 50px;
+}
+
+.testimonials-section {
+	padding: 80px 32px;
+}
+
+.btn-lg {
+	padding: 10px 50px;
+}
+
+.quote {
+	padding: 40px 0px;
+}
+
+/* ----------------------------MEDIA QUERIES------------------------------*/
+
+@media (max-width: 991px) {
+	.container-fluid.old-events {
+		padding: 80px 20px;
+	}
+
+
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+	.new-event {
+		padding: 40px 25px;
+	}
+
+	.bannerimage {
+		padding-top: 120px;
+		min-height: 250px;
+	}
+
+	.impcont h1 {
+		font-size: 26px;
+	}
+
+	.sponLogo1 img {
+		max-width:50%;
+	}
+
+	.sponLogo2 img {
+		max-width: 22%;
+		padding-bottom: 30px;
+	}
+
+
+	.new-event-title {
+		text-align: left;
+	}
+
+	.vid-pa {
+		float: left;
+	}
+
+	#mc_embed_signup {
+		padding: 40px 25px;
+	}
+
+	.container.old-events {
+		padding: 40px 18px;
+	}
+
+
+	.container-fluid.old-events {
+		padding: 40px 26px;
+	}
+
+
+	#mc_embed_signup {
+		padding: 40px 0px !important;
+	}
+
+	.videoWrapper {
+		text-align: center;
+	}
+
+	.videoWrapper iframe { width: 100%; }
+
+	.old-events {
+		padding-bottom: 40px;
+		padding-top: 40px;
+	}
+
+	.sponsorBG:last-child {
+		padding-bottom: 0px;
+	}
+
+	.sponsorBG, .sponsorBG.odd {
+		padding: 0px 10px;
+	}
+
+	.sponTitle h1 {
+		padding-bottom: 40px;
+	}
+
+	.eventsDesc { padding-bottom: 40px; }
+
+	.testimonials-section {
+		padding: 40px 32px;
+	}
+
+	.eventsTitle {
+		padding-top: 40px;
+	}
+
+}
+
+
+
+
+
+
+@media (max-width: 414px) {
+
+	.navbar-default {
+	    font-size: 9px;
+	}	
+
+	.bannerimage {
+		padding-top: 90px;
+		min-height: 200px;
+	}
+
+	.form-group {
+	    max-width: 300px;
+	    margin-left: 5%;
+	    margin-bottom: 30px;
+	}
+
+
+	.container.old-events {
+		padding: 40px 24px;
+	}
+
+
+	.container-fluid.old-events {
+		padding: 40px 24px;
+	}
+}
+
+
+@media (max-width: 375px) {
+	.form-group {
+	    max-width: 300px;
+	    margin-left: 0%;
+	    margin-bottom: 30px;
+	}
+}
