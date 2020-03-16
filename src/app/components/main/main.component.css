@@ -1,0 +1,641 @@
+/*--------------------------TABLE OF CONTENTS-------------------------*/
+/*
+0. GLOBAL CCS
+1. HERO IMAGE
+2. DESCRIPTION SECTION
+3. VIDEO SHAWCASE
+4. PLAYER/COACH SECTION
+5. QUOTE SECTION
+6. MEDIA QUERIES
+
+
+
+
+*/
+
+
+/*----------------------------0. GOBAL CSSS--------------------------*/
+
+body {
+	overflow-x: hidden !important;
+}
+
+div{
+	font-family: 'Montserrat';
+}
+
+.inactiveLink{
+   pointer-events: none;
+   cursor: default;
+}
+
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+*{
+    -webkit-overflow-scrolling: touch;
+}
+
+video {
+  width: 100%    !important;
+  height: auto   !important;
+  display: block;
+}
+
+.m-0 {
+	margin: 0px !important;
+}
+
+
+/*----------------------------1. HERO IMAGE--------------------------*/
+.heroimage{
+	padding-top: 90px;
+	/*background-image: url('../../../assets/heroimage.jpg');*/
+	/*background-image: url('../../../assets/hero-image.jpg');*/
+	background-image: url('../../../assets/hero-image-2.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	min-height: 800px;
+	width: 100%;
+}
+
+.impcont{
+	padding-top: 280px;
+	padding-bottom: 20px;
+}
+
+.heroimage a{
+	text-decoration: none; 
+	color: white;
+	font-size: 16px;
+	border: 1px solid #fd1541;
+	padding: 10px;
+	background-color: #fd1541;
+}
+
+.heroimage a:hover{
+	text-decoration: none; 
+	color: #fd1541;
+	font-size: 16px;
+	border: 1px solid white;
+	padding: 10px;
+	background-color: transparent;
+}
+
+
+/*----------------------------2. DESCRIPTION SECTION--------------------------*/
+.descTitle h1{
+	color: #1e1e1e;
+	background-color: white;
+	padding-top: 100px;
+	padding-bottom: 50px;
+}
+
+.descpic img{
+	max-width: 65%;
+}
+
+.descpara{
+	padding-bottom: 100px;
+}
+
+.descpara p{
+	color: #1e1e1e;
+	font-size: 16px;
+	line-height: 1.7em;
+	padding-bottom: 30px;
+}
+
+.offerTitle a{
+	text-decoration: none;
+	color: white;
+	background-color: #fd1541;
+	padding: 5px;
+}
+
+.offerTitle p{
+	padding-bottom: 0px;
+}
+
+.fa{
+	color: #fd1541;
+}
+
+.readMore a{
+	color: #fd1541;
+	text-decoration: none;
+}
+
+
+/*----------------------------3. VIDEO SHOWCASE--------------------------------*/
+
+
+.vidShowcasebg{
+	background-color: #fbfbff;
+	/*padding-top: 150px;
+	padding-bottom: 150px;*/
+}
+
+
+
+.mainVideo{
+	background-color: white;
+	color: #1e1e1e;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.mainVideo h1{
+	font-size: 18px;
+	font-weight: 700;
+	padding-left: 30px;
+}
+
+.mainVideo p{
+	font-size: 12px;
+	padding-left: 30px;
+	padding-bottom: 20px;
+	line-height: 2.0em;
+}
+
+.createSes{
+	background-color: white;
+	color: #1e1e1e;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.sesImgcont{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+
+.createSes h1{
+	font-size: 12px;
+	font-weight: 700;
+	padding-left: 5px;
+}
+
+.createSes p{
+	font-size: 10px;
+	line-height: 2.0em;
+	padding-top: 10px;
+	padding-bottom: 8px;
+	padding-left: 5px;
+}
+
+.sesLink{
+	margin-top: 15px;
+}
+
+.sesLink a{
+	font-size: 10px;
+	text-decoration: none;
+	color: white;
+	background-color: #fd1541;
+	padding: 5px;
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.persTrain{
+	background-image: url('../../../assets/pers-train.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	min-height: 118px;
+	width: 100%;
+}
+
+.persTrain h1{
+	color: white;
+	font-size: 14px;
+	line-height: 1.7em;
+}
+
+.persTrain a{
+	font-size: 12px;
+	text-decoration: none;
+	color: white;
+	background-color: #fd1541;
+	padding: 5px;
+}
+
+
+/*-----------------------4. PLAYER/COACH SECTION---------------------------*/
+.playerPromo{
+	background-color: #0e233e;
+}
+
+.coachPromo{
+	background-color: #182c4d;
+}
+
+.playerPromo a{
+	font-size: 26px;
+	text-decoration: none;
+	color: white;
+	background-color: #fd1541;
+	padding: 7px 45px 7px 5px;
+}
+
+.playerPromo{
+	padding-top: 5px;
+	padding-left: 0 !important;
+}
+
+.playerPromoText{
+	padding-left: 0 !important;	
+}
+
+.playerPromoText h1{
+	padding-top: 170px;
+	padding-left: 95px;
+	padding-bottom: 20px;
+	font-size: 24px;
+}
+
+.playerPromo img{
+	padding-top: 15px;
+	max-width: 70%;
+}
+
+.PromoSignbtn a{
+	font-size: 12px;
+	margin-left: 95px;
+	text-decoration: none;
+	background-color: transparent;
+	border: 1px solid #fd1541;
+	padding: 7px 25px 7px 25px;
+}
+
+.PromoSignbtn a:hover{
+	color: white;
+	text-decoration: none;
+	background-color: #fd1541;
+	border: 1px solid #fd1541;
+}
+
+
+
+.coachPromo a{
+	font-size: 26px;
+	text-decoration: none;
+	color: white;
+	background-color: #fd1541;
+	padding: 7px 45px 7px 5px;
+}
+
+.coachPromo{
+	padding-top: 5px;
+	padding-left: 0 !important;
+}
+
+.coachPromoText{
+	padding-left: 0 !important;	
+}
+
+.coachPromoText h1{
+	padding-top: 170px;
+	padding-left: 95px;
+	padding-bottom: 20px;
+	font-size: 24px;
+}
+
+.coachPromo img{
+	padding-top: 15px;
+	max-width: 100%;
+}
+
+.coachPromo .PromoSignbtn a{
+	font-size: 12px;
+	margin-left: 95px;
+	text-decoration: none;
+	background-color: transparent;
+	border: 1px solid #fd1541;
+	padding: 7px 25px 7px 25px;
+}
+
+.coachPromo .PromoSignbtn a:hover{
+	color: white;
+	text-decoration: none;
+	background-color: #fd1541;
+	border: 1px solid #fd1541;
+}
+
+.flexlist{ 
+	display: -webkit-flex; 
+	display: -ms-flexbox; 
+	display: flex; 
+	-webkit-flex-wrap: wrap; 
+	-ms-flex-wrap: wrap; 
+	flex-wrap: wrap; 
+	overflow: hidden;
+	padding-left: 0px;
+	margin-bottom: 0px;
+}
+
+.flexlist-item{ 
+	width: calc(100% / 2 - 0px); 
+	float: left; 
+	display: -webkit-flex; 
+	display: -ms-flexbox; 
+	display: flex;
+}
+
+#sm-ad{
+	display: none;
+}
+
+/*----------------------------5. POST CARD---------------------------*/
+.post-card {
+	background: #2f4054;
+	
+}
+
+.post-card .row {
+	margin: 0px;
+}
+
+.steps-row {
+	background: #262626;
+	padding: 30px 100px;
+}
+
+.post-card-title {
+	font-weight: bold;
+}
+.post-card-title span {
+	color: #3b90c7;
+}
+
+.step {
+	border-right: 1px solid #3b90c7;
+}
+
+.step:last-child {
+	border-right: 0px;
+}
+
+.step i {
+	font-size: 62px;
+	text-align: center;
+	display: block;
+}
+
+.features {
+	margin-bottom: 36px;
+}
+
+.step-number, .features-title {
+	font-weight: bold;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 24px;
+	display: block;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.step-des, .features-desc {
+	font-style: italic;
+	color: #3b90c7;
+	font-size: 20px;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+}
+
+.features h1 {
+	text-align: center;
+	margin-top: 0px;
+}
+
+
+.features h1 span {
+	color: #262624;
+	font-style: italic;
+	background: #8f989f;
+	padding: 0px 10px;
+}
+
+.features-details {
+	text-align: center;
+	padding-bottom: 25px;
+}
+
+
+.features-details .fa {
+	color: white;
+	font-size: 62px;
+	margin-top: 25px;
+	margin-bottom: 15px;
+}
+
+.features-title span {
+	color: #3b90c7;
+}
+
+.features-desc {
+	color: white;
+}
+
+
+
+
+/*----------------------------5. QUOTE SECTION---------------------------*/
+.quoteStyle h1{
+	padding-top: 40px;
+	padding-bottom: 40px;
+	font-size: 20px;
+	color: #484848;
+}
+
+
+/* MAILCHIMPS */
+.newsletter-section {
+	background-color: #fbfbff !important;
+}
+#mc_embed_signup h2, #mc_embed_signup .mc-field-group label {
+	color: #252525;
+}
+#mc_embed_signup h2 {
+	font-size: 26px;
+	font-weight: 400;
+	margin-bottom: 30px;
+}
+	
+
+#mc_embed_signup .button {
+	background: #fd1541;
+	border-radius: 0px;
+}
+
+#mc_embed_signup .button:hover {
+	background: #204d74;
+}
+
+#mc_embed_signup {
+	padding: 80px 156px !important;
+	background-color: #fbfbff !important;
+}
+
+.odd {
+	background-color: #fbfbff !important;
+}
+
+#mc_embed_signup form {
+	padding: 0px 14px !important;
+}
+
+#mc_embed_signup .clear {
+	margin-top: 25px;
+}
+
+.sub-succ-msg, .sub-error-msg {
+	display: none;
+}
+
+
+
+/* ----------------------------6. MEDIA QUERIES------------------------------*/
+@media (max-width: 1200px) {
+	.coachPromo .PromoSignbtn a{
+	    font-size: 10px;
+	}
+}
+
+
+@media (max-width: 1024px) {
+
+	.impcont{
+		padding-top: 140px;
+		padding-bottom: 20px;
+	}
+
+	.descpara p{
+		color: #1e1e1e;
+		font-size: 14px;
+		line-height: 1.7em;
+		padding-bottom: 30px;
+	}
+
+	.createSes{
+		margin-top: 60px;
+
+	}
+
+	.offerTitle a{
+		font-size: 14px;
+	}
+
+
+	.persTrain h1{
+		padding-top: 20px;
+	}
+
+	.coachPromo img{
+		padding-top: 15px;
+		max-width: 100%;
+	}
+
+	#lg-ad{
+		display: none;
+	}
+
+	#sm-ad{
+		display: block;
+	}
+}
+
+@media (max-width: 991px) {
+	.post-card-title {
+		margin-bottom: 50px;
+		text-align: center;
+	}
+	.step {
+		margin-bottom: 40px;
+		border-right: 0px;
+	}
+	.features-title {
+		margin-top: 40px;
+		margin-bottom: 30px;
+		font-size: 36px;
+	}
+	.for-players .features-title {
+		margin-top: 60px;
+	}
+
+	.for-players {
+		margin-bottom: 50px;
+	}
+}
+
+@media (max-width: 768px) {
+
+	.impcont{
+		padding-top: 100px;
+		padding-bottom: 20px;
+	}
+
+	.impcont h1{
+		font-size: 26px;
+	}	
+
+	#mc_embed_signup {
+		padding: 40px 0px !important;
+	}
+
+}
+
+
+
+@media (max-width: 414px) {
+
+	.navbar-default {
+	    font-size: 9px;
+	}	
+
+	.impcont{
+		padding-top: 40px;
+		padding-bottom: 20px;
+	}
+
+	.descpic img{
+		padding-bottom: 40px;
+		margin-left: 50px;
+	}
+
+	.playerPromoText h1 {
+	    padding-top: 90px;
+	}
+
+	.coachPromoText h1 {
+	    padding-top: 90px;
+	}
+}

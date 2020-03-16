@@ -1,0 +1,633 @@
+/*--------------------------TABLE OF CONTENTS-------------------------*/
+/*
+0. GLOBAL CCS
+1. BANNER IMAGE
+2. FILTERS SECTION
+3. VIDEO CONTENT
+4. CUSTOM SESSION BANNER
+5. NAME SESSION MODAL
+
+
+
+*/
+
+
+/*----------------------------0. GOBAL CSSS--------------------------*/
+
+div{
+	font-family: 'Montserrat';
+}
+
+.inactiveLink{
+   pointer-events: none;
+   cursor: default;
+}
+
+.btn{
+	border-radius: 0px;
+	outline:0;
+}
+
+button:focus{
+	outline:0;
+}
+
+.modal-content  {
+	/* width:inherit;
+	max-width:inherit;
+	height:inherit;
+    margin: 0 auto;
+	pointer-events:all; */
+
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important; 
+}
+
+.blur-div{
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+/*  width: 100px;
+  height: 100px;*/
+  background-color: #ccc;	
+}
+
+.row{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.exercises-main-filter {
+    margin-bottom: 0px !important;
+    border-bottom: 1px solid #eee;
+}
+
+/*----------------------------1. BANNER IMAGE--------------------------*/
+.bannerimage{
+	padding-top: 120px;
+	background-image: url('../../../assets/sessions-banner.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	min-height: 250px;
+	width: 100%;
+	color: white;
+}
+
+
+/*----------------------------2. FILTERS SECTION--------------------------*/
+.filterCont{
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+
+.filter-btn {
+	background-color: #fd1541;
+	padding-top: 4px;
+    padding-bottom: 4px;
+    border: 0px;	
+}
+
+
+.clearFilter{
+	margin-top: 30px;
+}
+
+.createDesc{
+	color: #333333;
+	padding-bottom: 80px;
+}
+
+#createSesBtn{
+	background-color: #fd1541;
+	padding-top: 4px;
+    padding-bottom: 4px;
+    margin-left: 15px;
+    border: 0px;
+    border-radius: 0px;
+}
+
+.fa-search {
+	margin-left: 5px;
+	margin-right: 10px;
+	color: white;
+}
+
+.btn-group>.btn {
+    position: relative;
+    float: left;
+    border-color: transparent;
+    border-bottom: 1px solid #0000001a;
+ 	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;   
+}
+
+.btn-default:hover {
+	color: #fd1541;
+	background-color: transparent;
+    border-bottom: 1px solid #0000001a;
+}
+
+.open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover {
+    color: #fd1541;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#savedSessModalTitle{
+	font-family: 'Montserrat';
+	color: #333333;
+}
+
+.modal-body {
+    position: relative;
+    padding: 15px 25px 15px 25px;
+    overflow: scroll;
+    height: 500px;
+}
+
+.modal-header {
+    padding: 35px 15px 15px 15px;
+    border-bottom: transparent; 
+}
+
+.sessName{
+	color: #333333;
+}
+
+.viewSessbtn{
+	color: white;
+	background-color: #fd1541;
+	border: transparent;	
+}
+
+.deleteSess {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    background-color: transparent;
+    border: transparent;
+    opacity: 0.6;
+}
+
+.editSess {
+    float: initial;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    background-color: transparent;
+    border: transparent;
+    opacity: 0.6;
+}
+
+.saved-pa{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.modalDesc{
+	color: #333333;
+}
+
+/*----------------------------3. VIDEO CONTENT--------------------------*/
+.cont-hscroll > .row{
+ 	overflow-x: auto;
+ 	white-space: nowrap;
+}
+
+.cont-hscroll > .row > .col-lg-4, .cold-md-4{
+	display: inline-block;
+ 	float: none;
+}
+
+.catTitle, .exercise-title{
+	margin-bottom: 20px;
+}
+
+.catTitle h1{
+	color: #fd1541;
+	font-size: 20px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #0000001a;
+}
+
+.exercise-section .row {
+	margin-bottom: 25px;
+}
+
+.exercise-title h1{
+	color: #333;
+	font-size: 24px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #0000001a;
+} 
+
+.exercise-tab {
+	font-size: 16px;
+	font-weight: bold;
+	color: black;
+	text-align: center;
+	cursor: pointer;
+	padding: 20px;
+}
+
+.exercise-tab:hover, .exercise-tab.active {
+	background: #fd1541;
+	color: white;
+}
+
+.exercise-cat-section .row {
+	margin-bottom: 25px;
+}
+
+.exercise-cat-tab {
+	font-size: 14px;
+	font-weight: bold;
+	color: #444;
+	text-align: center;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.exercise-cat-tab:hover, .exercise-cat-tab.active {
+	background: #fd1541;
+	color: white;
+}
+
+.catTitle h2{
+	color: #505050;
+	font-size: 15px;
+	font-weight: 700;
+	margin-top: 15px;
+	display: inline;	
+}
+
+.catTitle a{
+	text-decoration: none;
+}
+
+.catTitle a:hover {
+	cursor:pointer;
+}
+
+
+.signup-to-view {
+	display: inline;
+	background: rgba(255,0,0,0.8);
+	font-weight: bold;
+	cursor: pointer;
+}
+
+
+.vid-thumb{
+    position: relative;
+    /*display: inline-block;*/
+	overflow: hidden;	
+}
+
+.vid-thumb a span{
+    top: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);	
+}
+
+.vid-thumb a{
+	display: block;
+    position: absolute;
+    top: -100%;
+    opacity: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    color: inherit;
+    opacity: 1;
+    top: 0;
+}
+
+
+.fa-play-circle{
+   	color: #333333c4;
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+	margin-top: -1px;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.suggVids{
+	padding-bottom: 50px;
+}
+
+.allVids{
+	padding-bottom: 100px;
+}
+
+.row-ma{
+	margin-bottom: 40px;
+}
+
+.videoDes{
+	background-color: white;
+	color: #1e1e1e;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-bottom: 30px;
+	border: 1px solid #0000001a;
+}
+
+.videoDes h1{
+	font-size: 14px;
+	font-weight: 700;
+	padding-left: 10px;
+	margin-top: 10px;
+}
+
+.videoDes p{
+	font-size: 11px;
+	padding-left: 10px;
+	padding-bottom: 0px;
+	line-height: 1em;
+	color: #d13553;
+}
+
+.videoDes .row .col-lg-12{
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.add-btn-cont{
+	position: absolute;
+	z-index: 2;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.add-btn{
+	padding: 5px 9px;
+	background-color: #fd1541;
+	border: 1px solid #fd1541;
+}
+
+
+/*----------------------------4. CUSTOM SESSION BANNER--------------------------*/
+.sessionBanner{
+
+}
+
+.cont-topPA{
+	padding-top: 15px;
+}
+
+.cont-topPA-close{
+	padding-top: 15px;
+}
+
+.navbar-default {
+    background-color: #fd1541;
+    border-color: transparent;
+    color: white;
+}
+
+.detsbtn{
+	color: #fd1541;
+	font-size: 10px;
+	background-color: transparent;
+	border: transparent;
+	padding-left: 0px;
+}
+
+.dets-ma{
+	margin: 10px;
+}
+
+.viewVidbtn{
+    color: white;
+    background-color: #fd15417d;
+    border: transparent;
+    font-size: 12px;
+
+}
+
+.startSess{
+	background-color: white;
+	border-color: white;
+	font-weight: 700;
+	color: #fd1541;
+}
+
+.saveSess{
+	background-color: transparent;
+	border-color: transparent;
+}
+
+.ma-r{
+	margin-right: 15px;
+}
+
+.closeBannerbtn{
+	background-color: transparent;
+	border-color: transparent;
+}
+
+.fa-times{
+	color: white;
+}
+
+.closeActive{
+	display: block;
+}
+
+.closeActive1{
+	display: none;
+}
+
+
+/*--------------------------5. NAME SESSION MODAL ------------------------*/
+.open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover {
+    color: #fd1541;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+input{
+	margin: 0px;
+}
+
+#savedSessModalTitle{
+	color: #333333;
+}
+
+.modal-body {
+    position: relative;
+    padding: 15px 25px 15px 25px;
+}
+
+.modal-header {
+    padding: 35px 15px 15px 15px;
+    border-bottom: transparent; 
+}
+
+.nameSessForm{
+	padding-top: 15px;
+}
+
+.form-group{
+	max-width: 300px;
+	margin-left: 23%;
+	margin-bottom: 30px;
+}
+
+.nameSessForm input{
+	border: none; 
+	border-width: 0; 
+	box-shadow: none;
+	border-bottom: 1px solid #fd1541;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	background-color: rgba(0, 0, 0, 0);	
+}
+
+.saveSessName{
+	background-color: #fd1541;
+	/*border: 1px solid #fd1541;*/
+	color: white;
+	border: transparent;
+	padding: 5px 9px;
+}
+
+.saveSessBtnCont{
+	padding-bottom: 20px;
+}
+
+.addtoSess{
+	padding-top: 20px;
+}
+
+
+
+/* ----------------------------MEDIA QUERIES------------------------------*/
+
+@media (max-width: 1024px) {
+
+
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+	.bannerimage{
+		padding-top: 120px;
+		min-height: 250px;
+	}	
+
+	.impcont h1{
+		font-size: 26px;
+	}
+
+	.navbar-default {
+	    background-color: #fd1541;
+	    border-color: transparent;
+	    color: white;
+	    font-size: 10px;
+	}
+
+	.cont-hscroll > .row{
+	 	overflow-x: scroll;
+	 	white-space: nowrap;
+	  	-webkit-overflow-scrolling: touch;
+	}		
+
+}
+
+
+
+
+
+
+@media (max-width: 414px) {
+
+	.navbar-default {
+	    font-size: 9px;
+	}
+
+	.bannerimage{
+		padding-top: 90px;
+		min-height: 200px;
+	}	
+
+	.ma-r{
+		margin-right: 0px;
+	}
+
+	.cont-topPA-close{
+		padding-top: 15px;
+	}
+
+	.cont-topPA{
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+
+	.mobile-center{
+	    text-align: center;
+	    margin: 0 auto;
+	    padding-bottom: 2px;
+	}
+
+	.sessName{
+		font-size: 12px;
+	}
+
+	.form-group {
+	    max-width: 300px;
+	    margin-left: 5%;
+	    margin-bottom: 30px;
+	}	
+
+
+}
+
+@media (max-width: 375px) {
+
+	.filter-btn {
+		margin-top: 20px;
+	}
+
+	.deleteSess{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.form-group {
+	    max-width: 300px;
+	    margin-left: 0%;
+	    margin-bottom: 30px;
+	}	
+
+}

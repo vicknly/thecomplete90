@@ -1,0 +1,83 @@
+<div class="modal-container">
+  <div class="modal-header black">
+    <h4 class="modal-title pull-left">
+      {{ selectedContent.name }} | Session: {{ session.name }}
+    </h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <button type="button" class="close text-center" (click)="toggleAutoLoop()" *ngIf="userCreated">
+      <i class="fa fa-toggle-off" [ngClass]="{'fa-toggle-on': canAutoLoop()}" aria-hidden="true"></i>
+      &nbsp;&nbsp;&nbsp;
+    </button>
+    <span class="pull-right al-text" *ngIf="userCreated">Autoloop</span>
+  </div>
+  <div class="modal-body">
+    <button type="button" class="btn btn-primary" (click)="playPrevious()">
+      <i class="fa fa-angle-left fa-3x" aria-hidden="true"></i>
+    </button>
+    <vg-player (onPlayerReady)="onPlayerReady($event)">
+      <div *ngIf="userCreated" class="loop-timer-container">
+        <div class="loop-timer">{{ getTimerText() }}</div>
+      </div>
+      <vg-overlay-play></vg-overlay-play>
+      <!-- <vg-buffering></vg-buffering> -->
+
+      <vg-scrub-bar>
+        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+        <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+        <vg-scrub-bar-cue-points [vgCuePoints]="track?.cues"></vg-scrub-bar-cue-points>
+      </vg-scrub-bar>
+
+      <vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5">
+        <vg-play-pause></vg-play-pause>
+        <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+        <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+        <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+        <vg-track-selector></vg-track-selector>
+        <vg-mute></vg-mute>
+        <vg-fullscreen></vg-fullscreen>
+      </vg-controls>
+      <video [src]="selectedContent.link" [vgMedia]="media" #media id="singleVideo" preload="auto">
+      </video>
+    </vg-player>
+    <button type="button" class="btn btn-primary" (click)="playNext()">
+      <i class="fa fa-angle-right fa-3x" aria-hidden="true"></i>
+    </button>
+  </div>
+  <div class="modal__footer">
+    <div class="footer__container">
+      <div class="footer__description-container">
+        <h3>Description</h3>
+        <span class="description_body">{{ selectedContent.description || 'Description unavailable' }}</span>
+      </div>
+      <div class="footer__meta-container">
+        <div class="meta_item" *ngIf="selectedContent.tags">
+          <span>LTPD</span>
+          <div *ngFor="let tag of selectedContent.tags" style="display: flex; flex-direction: row;">
+            {{ tag }}
+          </div>
+        </div>
+        <div class="meta_item" *ngIf="selectedContent.category">
+          <span>Category</span>
+          <div *ngFor="let category of selectedContent.category" style="display: flex; flex-direction: row;">
+            {{ category }}
+          </div>
+        </div>
+        <div class="meta_item" *ngIf="selectedContent.difficulty">Difficulty</div>
+        <div class="meta_item">
+          <span>Train Time</span>
+          <span>{{ selectedContent.minutes }}:{{ selectedContent.seconds }}</span>
+        </div>
+        <div class="meta_item" *ngIf="selectedContent.reps">
+          <span>Reps</span>
+          <span>{{ selectedContent.reps }}</span>
+        </div>
+        <div class="meta_item" *ngIf="selectedContent.sets">
+          <span>Sets</span>
+          <span>{{ selectedContent.sets }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,200 @@
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    
+    <div class="container my-5 tabs-container ">
+        <div class="row">
+            <div class="col-md-12">
+                 <ul class="nav nav-tabs pricing-tabs" role="tablist">
+    <li class="nav-item col-md-6 p-0 active">
+      <a class="nav-link " data-toggle="tab" href="#player">
+        <img src="assets/player.png" class="img-fluid">
+        <h3>Player</h3>
+
+      </a>
+    </li>
+    <li class="nav-item col-md-6 p-0">
+      <a class="nav-link" data-toggle="tab" href="#club">
+        <img src="assets/football-icon.png" class="img-fluid">
+        <h3>Club</h3>
+      </a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content pricing-tabs-content">
+    <div id="player" class="container tab-pane active">
+     <div class="row py-5">
+        
+        <div class="col-xl-1 col-lg-1"></div>
+        <div class="col-xl-10 col-lg-10 col-md-12 m-auto">
+            <h3>Our Players</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            </p>
+
+
+
+                <!--start pricing table-->
+
+
+
+
+                <div class="row">
+               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6  p-0">
+                <div class="single-price">
+                  <div class="price-title">
+                  </div>
+                  <div class="price-tag">
+                    <h5>Choose the Plans</h5>
+                  </div>
+                  <div class="price-item">
+                    <ul>
+                        <li>Access to 100+ HD training videos </li>
+                        <li>Create your own custom training sessions</li>
+                        <li>Track your progress</li>
+                        <li>Access to leader boards</li>
+                        <li>Eligible for prices</li>
+                        <li>Personalized weekly sessions</li>
+                        <li>Personalize player profile</li>
+                    </ul>
+                  </div>
+                  <!-- <a href="" class="box-btn">purchase now</a> -->
+               </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3  p-0">
+                <div class="single-price">
+                  <div class="price-title">
+                  </div>
+                  <div class="price-tag center">
+                    <h2>Amateur</h2>
+                    <h2>$12.95 <span>month</span></h2>
+                  </div>
+                  <div class="price-item">
+                    <ul>
+                        <li><i class="fas fa-check check-icon"></i></li>
+                        <li><i class="fas fa-check check-icon"></i></li>
+                        <li><i class="fas fa-check check-icon"></i></li>
+                        <li><i class="fas fa-times times-icon"></i></li>
+                        <li><i class="fas fa-times times-icon"></i></li>
+                        <li><i class="fas fa-times times-icon"></i></li>
+                        <li><i class="fas fa-times times-icon"></i></li>
+                    </ul>
+                  </div>
+                  <!-- <a href="" class="box-btn">purchase now</a> -->
+               </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 p-0">
+                <div class="single-price">
+                  <div class="price-title">
+                  </div>
+                  <div class="price-tag">
+                    <h2>Pro</h2>
+                    <h2>$17.95 <span>month</span></h2>
+                  </div>
+                  <div class="price-item">
+                    <ul>
+                        <li><i class="fas fa-check check-icon"></i></li>
+                        <li><i class="fas fa-check check-icon"></i></li>
+                        <li><i class="fas fa-check check-icon"></i></li>
+                        <li><i class="fas fa-check  check-icon"></i></li>
+                        <li><i class="fas fa-check check-icon"></i></li>
+                        <li><i class="fas fa-check check-icon"></i></li>
+                        <li><i class="fas fa-check check-icon"></i></li>
+                    </ul>
+                  </div>
+               </div>
+               </div>
+             </div>
+          <!--   -->
+
+          <div class="row">
+            <div class="col-md-12 free-trial">
+              <ul class="highlight-text clearfix">
+                  <li>Cancel Any time</li>
+                  <li>Billed Monthly</li>
+              </ul>
+            </div>
+          </div>
+
+                 
+          <div class="row btns-row sticky">
+
+
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Select Plan</label>
+                <select class="form-control" id="plan" name="planType" (change)="onChange($event)" [(ngModel)]="planType" >
+                  <option value="amateur">Amateur</option>
+                  <option value="pro">Pro</option>
+                </select>
+              </div>
+
+
+              <div class="col-md-12 text-center">
+                <a class="bg-transparent purchase-btn1"  (click)="setCycle('monthly');selectPlan('player')">Purchase</a>
+                <a class="purchase-btn1 text-white" (click)="setTrial();setCycle('monthly');selectPlan('player');">Start 7-Day free Trial</a>
+              </div>
+          </div>
+
+
+                       
+          
+        </div>
+
+
+        <!-- TESTIMONINALS --> 
+		<div class="container mt-5">
+			<div class="row">
+				<div class="col-md-10 m-auto">
+					<h3 class="testimonials_title text-center">Testimonials</h3>
+					<div class="owl-carousel owl-theme owl-carousel-testimoniels">
+						<div> 
+							<p class="testimonials pa-bt text-center">
+								<b>"Since my son Julian began training with Giuliano at The Complete 90, we have seen an improvement not only with his technical skills and game play but also his confidence on the field. And he loves it."</b><br>
+								<br>
+								- Lisa Srock
+							</p>	
+						</div>
+						<div> 
+							<p class="testimonials text-center">
+								<b>"Enjoyable, challenging , organized, forward training/thinking instructions, 
+				
+								Inclusive and encouraging approach to daily sessions and activities. As described by my son, as well as myself having spent 85% of the week observing and enjoying, the progression from day one to the elevated quality and confidence by weeks end was extremely noticeable."</b><br>
+								<br>
+								- Tasso Gilatis
+							</p> 
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<!-- TESTIMONIALS END -->
+
+
+        </div>
+     </div>
+
+     
+
+    <div id="club" class="container tab-pane fade"><br>
+       <div class="row py-5">
+        <div class="col-xl-1 col-lg-1"></div>
+        <div class="col-xl-10 col-lg-10 col-md-12 m-auto">
+            <h3>Technical Directors</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            </p>
+            <img src="assets/hero-image.jpg" class="img-fluid py-4">
+            <a href="#">Book Call</a>
+            <h3 class="pt-5">Our Players</h3>
+            <img src="assets/pricing-banner.jpg" class="img-fluid py-4">
+            <a href="#">Book Call</a>
+        </div>
+        </div>
+    </div>
+  </div>
+            </div>
+        </div>
+    </div>
