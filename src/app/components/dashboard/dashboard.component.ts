@@ -195,12 +195,16 @@ export class DashboardComponent implements OnInit {
 
       this.groupContent(response.content);
     });
+
+
+    
+
   }
 
   loadProfile() {
     this.dataService.getUserProfile(false).subscribe(res => {
       this.onProfileUpdated(res.user);
-      //console.log(this.user.subscription.planId);
+      console.log("User: ", this.user.subscription.planId);
     });
   }
 
@@ -252,7 +256,7 @@ export class DashboardComponent implements OnInit {
 
   hasSubscription() {
   //console.log(this.user.token);
-    if (!this.user.subscription) {
+    if (this.user.subscription) {
       return true;
     }
     return false;

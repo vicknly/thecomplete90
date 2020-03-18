@@ -16,7 +16,7 @@ export class PricingComponent implements OnInit {
   coachPrice;
   plans = {};
   isCoach = false;
-  planType = '';
+  planType = 'pro';
   isTrial = '';
   constructor(private dataService: DataService,
     private router: Router) {

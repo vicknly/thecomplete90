@@ -8,6 +8,8 @@ import { ConfirmComponent } from '../modals/confirm/confirm.component';
 import * as _ from 'lodash';
 import { isUndefined } from 'util';
 import { empty } from 'rxjs';
+declare var jQuery: any;
+
 
 @Component({
   selector: 'app-sessions',
@@ -16,7 +18,8 @@ import { empty } from 'rxjs';
   entryComponents: [VideoplayerComponent, AddcontentToSessionComponent]
 })
 export class SessionsComponent implements OnInit {
-
+  encryptSecretKey = "abc123zyx654";
+  CryptoJS = require("crypto-js");
   @ViewChild(ModalDirective) modal: ModalDirective;
 
 
@@ -56,6 +59,33 @@ export class SessionsComponent implements OnInit {
     console.log("Exercises: ", this.selectedExerciseCat);
   }
 
+
+
+
+  encryptData(data) {
+
+    try {
+      return this.CryptoJS.AES.encrypt(JSON.stringify(data), this.encryptSecretKey).toString();
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  decryptData(data) {
+
+    try {
+      const bytes = this.CryptoJS.AES.decrypt(data, this.encryptSecretKey);
+      if (bytes.toString()) {
+        return JSON.parse(bytes.toString(this.CryptoJS.enc.Utf8));
+      }
+      return data;
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+
+
   getSelectedExerciseCatSessions() {
     
       let clone = _.cloneDeep(this.sessions);
@@ -69,10 +99,19 @@ export class SessionsComponent implements OnInit {
 
         if(exercise) {
           if(session.exercise === exercise && session.exercisesCat.indexOf(exerciseCat) != -1 ) {
+
+            var totalDisplaying = 0;
+            session.display.forEach(function(d){
+              totalDisplaying += d.length;
+            });
+            session.remaining = session.content.length - session.defaultView - totalDisplaying;
+            console.log("S: ", session);
             return true;
           }
       
         }
+
+          
 
         // if(exerciseCat) {
         //   console.log(session.exercisesCat.indexOf(exerciseCat));
@@ -190,6 +229,12 @@ export class SessionsComponent implements OnInit {
 
   init() {
     this.loadProfile();
+    jQuery(document).ready(function(){
+      jQuery(".purchase-sub").on("click", function(){
+        jQuery(".modal-backdrop").remove();
+        jQuery("body").removeClass("modal-open");
+      });
+    });
   }
 
   hasFilter() {
@@ -527,6 +572,18 @@ export class SessionsComponent implements OnInit {
       this.freeSessions = [];
       //this.collectTagsAndCategories(response.content);
       this.groupContent(response.content, this.freeSessions);
+      this.freeSessions.forEach(function(session){
+        var totalDisplaying = 0;
+        session.display.forEach(function(d){
+          totalDisplaying += d.length;
+        });
+        session.remaining = session.content.length - session.defaultView - totalDisplaying;
+
+        // session.content.forEach(function(s){
+        //   s.link = this.encryptData(s.link);
+        // });
+
+      });
       console.log("Free Sessions", this.freeSessions);;
     });
   }
@@ -579,6 +636,9 @@ export class SessionsComponent implements OnInit {
         session.display.push(session.chunks.shift());
       }
     }
+    session.remaining -= session.defaultView;
+    session.remaining = session.remaining < 0 ? 0 : session.remaining;
+    console.log(session);
   }
 
   showLess(session) {
@@ -587,6 +647,11 @@ export class SessionsComponent implements OnInit {
         session.chunks.unshift(session.display.pop());
       }
     }
+    var totalDisplaying = 0;
+    session.display.forEach(function(d){
+      totalDisplaying += d.length;
+    });
+    session.remaining = session.content.length - session.defaultView - totalDisplaying;
   }
 
   getChunks(arr, len) {
@@ -649,7 +714,7 @@ export class SessionsComponent implements OnInit {
 
   loadProfile() {
     this.dataService.getUserProfile(false).subscribe(res => {
-      console.log(res.user);
+      console.log("User: ", res.user);
       this.onProfileUpdated(res.user);
     });
   }

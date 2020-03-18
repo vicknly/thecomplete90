@@ -65,6 +65,18 @@ button:focus{
     border-bottom: 1px solid #eee;
 }
 
+.modal-backdrop {
+	z-index: 0 !important;
+}
+
+#custom_sessions_modal {
+	color: black;
+}
+
+#custom_sessions_modal .modal-body {
+	overflow: hidden !important;
+}
+
 /*----------------------------1. BANNER IMAGE--------------------------*/
 .bannerimage{
 	padding-top: 120px;

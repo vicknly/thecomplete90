@@ -107,6 +107,10 @@ h3{
 	float: none;
 }
 
+.text-dark {
+	color: black;
+}
+
 /*--------pricing table style--------*/
 .section-title h2 {
     	font-size: 32px;

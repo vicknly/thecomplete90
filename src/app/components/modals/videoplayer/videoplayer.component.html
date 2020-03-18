@@ -38,7 +38,7 @@
         <vg-mute></vg-mute>
         <vg-fullscreen></vg-fullscreen>
       </vg-controls>
-      <video [src]="selectedContent.link" [vgMedia]="media" #media id="singleVideo" preload="auto">
+      <video [src]="selectedContent.link" [vgMedia]="media" #media id="singleVideo" preload="auto" controlslist="download" download>
       </video>
     </vg-player>
     <button type="button" class="btn btn-primary" (click)="playNext()">
