@@ -19,7 +19,7 @@ declare var jQuery: any;
 })
 export class SessionsComponent implements OnInit {
   encryptSecretKey = "abc123zyx654";
-  CryptoJS = require("crypto-js");
+  //CryptoJS = require("crypto-js");
   @ViewChild(ModalDirective) modal: ModalDirective;
 
 
@@ -62,27 +62,27 @@ export class SessionsComponent implements OnInit {
 
 
 
-  encryptData(data) {
+  // encryptData(data) {
 
-    try {
-      return this.CryptoJS.AES.encrypt(JSON.stringify(data), this.encryptSecretKey).toString();
-    } catch (e) {
-      console.log(e);
-    }
-  }
+  //   try {
+  //     return this.CryptoJS.AES.encrypt(JSON.stringify(data), this.encryptSecretKey).toString();
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }
 
-  decryptData(data) {
+  // decryptData(data) {
 
-    try {
-      const bytes = this.CryptoJS.AES.decrypt(data, this.encryptSecretKey);
-      if (bytes.toString()) {
-        return JSON.parse(bytes.toString(this.CryptoJS.enc.Utf8));
-      }
-      return data;
-    } catch (e) {
-      console.log(e);
-    }
-  }
+  //   try {
+  //     const bytes = this.CryptoJS.AES.decrypt(data, this.encryptSecretKey);
+  //     if (bytes.toString()) {
+  //       return JSON.parse(bytes.toString(this.CryptoJS.enc.Utf8));
+  //     }
+  //     return data;
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }
 
 
 
