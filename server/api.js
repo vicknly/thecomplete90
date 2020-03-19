@@ -219,7 +219,7 @@ module.exports = function (app) {
                         var name = req.body.name.split(' ');
                         var listId;
 
-                        if (req.body.isManager) {
+                        if (req.body.isManager === true) {
                             //await createClub(req.body.clubName, user._id);
                             await updateClub(req.body.clubId, user._id);
                             listId = mcConfig.COACH_SIGN_UP_LIST;
