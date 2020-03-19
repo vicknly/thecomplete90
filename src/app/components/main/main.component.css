@@ -278,11 +278,20 @@ video {
 	padding-left: 95px;
 	padding-bottom: 20px;
 	font-size: 24px;
+	position: relative;
+    top: -25px;
 }
 
 .playerPromo img{
 	padding-top: 15px;
-	max-width: 70%;
+    max-width: 70%;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.PromoSignbtn {
+	position: relative;
+    top: -20px;
 }
 
 .PromoSignbtn a{
@@ -325,11 +334,16 @@ video {
 	padding-left: 95px;
 	padding-bottom: 20px;
 	font-size: 24px;
+	position: relative;
+    top: -25px;
 }
 
 .coachPromo img{
 	padding-top: 15px;
 	max-width: 100%;
+	position: absolute;
+    bottom: 0px;
+    right: 0px;
 }
 
 .coachPromo .PromoSignbtn a{
@@ -594,6 +608,12 @@ video {
 	.for-players {
 		margin-bottom: 50px;
 	}
+
+	.coachPromo img, .playerPromo img{
+		position: relative;
+	}
+
+
 }
 
 @media (max-width: 768px) {
@@ -610,6 +630,8 @@ video {
 	#mc_embed_signup {
 		padding: 40px 0px !important;
 	}
+
+	
 
 }
 
@@ -632,7 +654,8 @@ video {
 	}
 
 	.playerPromoText h1 {
-	    padding-top: 90px;
+		padding-top: 90px;
+		
 	}
 
 	.coachPromoText h1 {

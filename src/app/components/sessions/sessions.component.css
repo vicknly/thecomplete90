@@ -291,7 +291,7 @@ button:focus{
 
 .signup-to-view {
 	display: inline;
-	background: rgba(255,0,0,0.8);
+	background: rgba(120, 120, 120, 0.8);
 	font-weight: bold;
 	cursor: pointer;
 }
@@ -303,12 +303,17 @@ button:focus{
 	overflow: hidden;	
 }
 
-.vid-thumb a span{
+.vid-thumb a span, .vid-thumb a i{
     top: 50%;
     position: absolute;
     left: 0;
     right: 0;
     transform: translateY(-50%);	
+}
+
+.vid-thumb a i{
+	top: 36%;
+    font-size: 26px;
 }
 
 .vid-thumb a{

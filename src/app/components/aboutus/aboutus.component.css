@@ -51,6 +51,10 @@ div{
 	width: 100%;
 }
 
+.aboutsectBG1 {
+	background: #FBFBFF;
+}
+
 .aboutsectBG2 {
 	background-image: url('../../../assets/aboutbg-rotated-pic.png');
 	background-position: right;

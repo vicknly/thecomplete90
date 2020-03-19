@@ -245,15 +245,18 @@
                             </a>
 
                             <a [routerLink]="['/login_signup']" *ngIf="!isLoggedIn() && content.alwaysActive !== true" class="signup-to-view">
+                                <i class="fa fa-lock"></i>
                                 <span>Signup to View</span>  
                             </a>
 
                             <a [routerLink]="['/pricing']" *ngIf="isLoggedIn() && !hasSubscription() && content.alwaysActive !== true" class="signup-to-view">
+                                <i class="fa fa-lock"></i>
                                 <span>Please buy subscription to have full access.</span>  
                             </a>
 
 
                             <a [routerLink]="['/pricing']" *ngIf="isLoggedIn() && hasSubscription() && (user.subscription.planId=='player-monthly-amateur' || user.subscription.planId=='coach-monthly-amateur') && content.alwaysActive !== true" class="signup-to-view">
+                                <i class="fa fa-lock"></i>
                                 <span>Upgrade your account to pro for full access</span>  
                             </a>
 
