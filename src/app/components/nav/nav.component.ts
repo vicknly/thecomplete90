@@ -13,15 +13,41 @@ export class NavComponent implements OnInit {
   userProfile = {
     subscription: undefined,
   };
+
+
+  user = {
+    name: '',
+    subscription: undefined,
+    nationality: '',
+    creditCards: [],
+    avatarURL: '',
+    clubName: '',
+  };
+  playerProfile: any;
+  coachProfile: any;
+  adminProfile: any;
+
+
   collapsed = true;
 
   constructor(
     private router: Router,
     public dataService: DataService,
     public authenticationService: AuthenticationService) {
+      this.init();
   }
 
   ngOnInit() {
+  }
+
+  init() {
+    this.loadProfile();
+    setTimeout(function(){
+      if(!this.adminProfile) {
+        this.router.navigate(['/']);
+      }
+    }, 1000);
+    
   }
 
   hasSubscription(cb) {
@@ -65,4 +91,31 @@ export class NavComponent implements OnInit {
     this.dataService.bustCache();
     this.collapse();
   }
+
+  loadProfile() {
+    this.dataService.getUserProfile(false).subscribe(res => {
+      this.onProfileUpdated(res.user);
+      console.log("User: ", this.user.subscription.planId);
+    });
+  }
+
+  onProfileUpdated(user) {
+    if (user) {
+      this.user = user;
+      this.user.avatarURL = user.avatarURL;
+      this.playerProfile = user.profiles.find(profile => {
+        return profile.type === 'PLAYER';
+      });
+      this.coachProfile = user.profiles.find(profile => {
+        return profile.type === 'MANAGER';
+      });
+      this.adminProfile = user.profiles.find(profile => {
+        return profile.type === 'admin';
+      });
+    } else {
+      // this.loadProfile();
+    }
+  }
+
+
 }

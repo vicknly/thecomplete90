@@ -52,7 +52,7 @@ div{
 }
 
 .aboutsectBG1 {
-	background: #FBFBFF;
+	background-color: #FBFBFF;
 }
 
 .aboutsectBG2 {
@@ -154,6 +154,9 @@ div{
 
 
 /*----------------------------5. AFFILIATES SECTION---------------------------*/
+.affiliates {
+	background-color: #FBFBFF;
+}
 .affDesc h1{
 	font-size: 30px;
     color: #252525;
@@ -205,11 +208,20 @@ div{
 	padding-left: 95px;
 	padding-bottom: 20px;
 	font-size: 24px;
+	position: relative;
+    top: -25px;
 }
 
 .playerPromo img{
 	padding-top: 15px;
-	max-width: 70%;
+    max-width: 70%;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.PromoSignbtn {
+	position: relative;
+    top: -20px;
 }
 
 .PromoSignbtn a{
@@ -219,10 +231,6 @@ div{
 	background-color: transparent;
 	border: 1px solid #fd1541;
 	padding: 7px 25px 7px 25px;
-    margin-bottom: 20px;
-}
-.PromoSignbtn {
-    margin-bottom: 20px;
 }
 
 .PromoSignbtn a:hover{
@@ -256,11 +264,16 @@ div{
 	padding-left: 95px;
 	padding-bottom: 20px;
 	font-size: 24px;
+	position: relative;
+    top: -25px;
 }
 
 .coachPromo img{
 	padding-top: 15px;
 	max-width: 100%;
+	position: absolute;
+    bottom: 0px;
+    right: 0px;
 }
 
 .coachPromo .PromoSignbtn a{
@@ -288,6 +301,7 @@ div{
 	flex-wrap: wrap; 
 	overflow: hidden;
 	padding-left: 0px;
+	margin-bottom: 0px;
 }
 
 .flexlist-item{ 
@@ -360,9 +374,12 @@ div{
 
 }
 
+@media (max-width: 991px) {
 
-
-
+	.coachPromo img, .playerPromo img{
+		position: relative;
+	}
+}
 
 
 @media (max-width: 768px) {

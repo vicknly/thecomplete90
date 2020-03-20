@@ -138,6 +138,7 @@ export class SessionsComponent implements OnInit {
 
   playerProfile: any;
   coachProfile: any;
+  adminProfile: any;
 
   exercisesArray = {
                 "exercises": 
@@ -744,6 +745,9 @@ onProfileUpdated(user) {
       });
       this.coachProfile = user.profiles.find(profile => {
         return profile.type === 'MANAGER';
+      });
+      this.adminProfile = user.profiles.find(profile => {
+        return profile.type === 'admin';
       });
     } else {
       // this.loadProfile();

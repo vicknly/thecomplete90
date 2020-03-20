@@ -8,6 +8,7 @@ const {
 const User = require('./models/user');
 const Club = require('./models/club');
 const SignupPromo = require('./models/signup_promo');
+const mongoose = require('mongoose');
 
 module.exports = function (app) {
     var mailer = require('./helpers/mailer');
@@ -179,7 +180,18 @@ module.exports = function (app) {
     });
 
     apiRoutes.post('/createClubs', (req, res) => {
-        createClub(req.body.clubName, req.body.email, req.body.phone, req.decoded.userId);
+        var club = new Club({name: req.body.clubName, email: req.body.email, phoneNumber: req.body.phone, owner: mongoose.Types.ObjectId(req.body.userId)})
+        club.save(async (err, club) => {
+            if (err) {
+                console.log(err);
+                return reject(err);
+            }
+            res.json({
+                success: true
+            });
+        });
+
+
     });
 
 

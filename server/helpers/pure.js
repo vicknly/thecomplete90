@@ -1,5 +1,6 @@
 var User = require('../models/user')
 var Club = require('../models/club')
+const mongoose = require('mongoose');
 
 const isEmptyObj = (obj) => {
     return Object.keys(obj).length === 0 && obj.constructor === Object;
@@ -36,7 +37,7 @@ const exposedClubData = (club) => {
 
 const createClub = (name, email, phone, ownerId) => {
     return new Promise((resolve, reject) => {
-        var club = new Club({name: name, email: email, phoneNumber: phone, owner: ownerId})
+        var club = new Club({name: name, email: email, phoneNumber: phone, owner: mongoose.Types.ObjectId(ownerId)})
         club.save((err, club) => {
             if (err) {
                 return reject(err);

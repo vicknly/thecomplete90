@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService, DataService } from '../../services';
 import { Router } from '@angular/router';
+import { FormControl, Validators } from '@angular/forms';
 declare var require: any;
 
 @Component({
@@ -10,6 +11,7 @@ declare var require: any;
 })
 export class ClubsComponent implements OnInit {
   model: any = {};
+  user: any;
   emailSent = false;
   error: string = '';
   club;
@@ -24,9 +26,59 @@ export class ClubsComponent implements OnInit {
 
   ngOnInit() {
     this.getClubs();
+    this.loadProfile();
     
   }
 
+  loadProfile() {
+    this.dataService.getUserProfile(false).subscribe(res => {
+      this.user = res.user;
+      console.log("User: ", this.user);
+    });
+  }
+
+
+  createClub() {
+    console.log(this.model);
+    if (!this.model.name || !this.model.email || !this.model.phone) {
+            this.error = 'Make sure all required fields are completed!';
+        return;
+    }
+
+    let payload = {
+      userId: this.user.id,
+      clubName: this.model.name,
+      phone: this.model.phone,
+      email: this.model.email,
+    };
+
+
+      this.authenticationService.createClub(payload)
+        .subscribe(result => {
+            if (result && result.success == true) {
+                /**
+                 * we should actually send them to a temp page
+                 * that will ask them to confirm their email or 
+                 * some other user validation step. then shortly
+                 * after send them to the home page
+                 */
+                this.error = '';
+            } else if (result && result.success !== true) {
+                switch(result.code) {
+                    case 11000:
+                        this.error = 'Club name already exists. Please try something else';
+                        break;
+                    default:
+                        this.error = result.message
+                        break;
+                }
+            } else {
+                this.error = 'Please try again. something went wrong';
+            }
+        });
+
+
+  }
 
   getClubs() {
     this.dataService.getClubs().subscribe(result => {
@@ -47,9 +99,6 @@ export class ClubsComponent implements OnInit {
     return re.test(String(email).toLowerCase());
   }
   clubSignup() {
-    //this.model.name = "qaiser.saeed25@gmail.com"
-    //this.model.form = "qaiser.saeed25@gmail.com"
-    //this.model.message = "qaiser.saeed25@gmail.com"
 
     console.log(this.model.club);
     if (!this.validateEmail(this.model.club['email'])) {
