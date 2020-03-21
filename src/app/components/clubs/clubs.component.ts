@@ -16,6 +16,9 @@ export class ClubsComponent implements OnInit {
   error: string = '';
   club;
   allClubs;
+  adminProfile: any;
+  playerProfile: any;
+  coachProfile: any;
   //this.model.from = "";
 
  constructor(
@@ -27,16 +30,37 @@ export class ClubsComponent implements OnInit {
   ngOnInit() {
     this.getClubs();
     this.loadProfile();
+    if(!this.adminProfile) {
+      this.router.navigate(['/']);
+    }
     
   }
 
   loadProfile() {
     this.dataService.getUserProfile(false).subscribe(res => {
       this.user = res.user;
+      this.onProfileUpdated(res.user);
       console.log("User: ", this.user);
     });
   }
 
+  onProfileUpdated(user) {
+    if (user) {
+      this.user = user;
+      this.user.avatarURL = user.avatarURL;
+      this.playerProfile = user.profiles.find(profile => {
+        return profile.type === 'PLAYER';
+      });
+      this.coachProfile = user.profiles.find(profile => {
+        return profile.type === 'MANAGER';
+      });
+      this.adminProfile = user.profiles.find(profile => {
+        return profile.type === 'admin';
+      });
+    } else {
+      // this.loadProfile();
+    }
+  }
 
   createClub() {
     console.log(this.model);
@@ -63,6 +87,16 @@ export class ClubsComponent implements OnInit {
                  * after send them to the home page
                  */
                 this.error = '';
+                
+                var obj = { 
+                  _id: result.id,
+                  name: this.model.name,
+                  phoneNumber: this.model.phone,
+                  email: this.model.email
+                };
+                console.log("All Clubs", this.allClubs);
+                this.model = '';
+                this.allClubs.push(obj);
             } else if (result && result.success !== true) {
                 switch(result.code) {
                     case 11000:

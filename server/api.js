@@ -187,6 +187,7 @@ module.exports = function (app) {
                 return reject(err);
             }
             res.json({
+                id: club._id,
                 success: true
             });
         });

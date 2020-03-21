@@ -56,11 +56,22 @@
                     <a *ngIf="!createManagerProfile" class="form-text text-muted" id="" (click)="createManagerProfile = !createManagerProfile">Do you want to create a manager profile?</a>
                     <a *ngIf="createManagerProfile" class="form-text text-muted" id="" (click)="createManagerProfile = !createManagerProfile">Switch to player profile?</a>
                 </div> -->
+
+
+                <div class="form-grou col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 text-centerp">
+                    <label for="exampleFormControlSelect1" class="text-dark">Select Plan</label>
+                    <select class="form-control" id="plan" name="planType" [(ngModel)]="planType">
+                      <option value="amateur">Amateur</option>
+                      <option value="pro">Pro</option>
+                    </select>
+                  </div>
+
+
                 <div *ngIf="createManagerProfile" class="form-group col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 text-center">
                     <input name="clubName" class="form-control" placeholder="Enter Club Name" [(ngModel)]="model.clubName">
                 </div>
                 <div class="formbts col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 text-center">
-                    <button type="submit" class="btn btn-primary" id="btn1" data-toggle="modal" data-target="#termsModal">Submit</button>
+                    <button type="submit" class="btn btn-primary" id="btn1" data-toggle="modal" data-target="#termsModal" [disabled]="disabled" >Submit</button>
                     <button class="btn btn-primary" id="btn2" (click)="toggleSignup()">Already have an account</button>
                 </div>
                 <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 text-center">
@@ -159,7 +170,7 @@
                 </div>
                 <div class="modal-footer">
                     <div class="text-center">
-                        <button type="button" class="btn btn-primary abtn" data-dismiss="modal" (click)="signUp()">I AGREE</button>
+                        <button type="button" class="btn btn-primary abtn" data-dismiss="modal" (click)="setCycle('monthly');selectPlan('player')">I AGREE</button>
                         <button type="button" class="btn btn-primary dbtn" data-dismiss="modal" (click)="toggleSignup()">DECLINE</button>
                     </div>
                 </div>

@@ -42,11 +42,7 @@ export class NavComponent implements OnInit {
 
   init() {
     this.loadProfile();
-    setTimeout(function(){
-      if(!this.adminProfile) {
-        this.router.navigate(['/']);
-      }
-    }, 1000);
+    
     
   }
 

@@ -41,6 +41,10 @@ form, span{
     text-align: center;
 }
 
+select {
+	color: black;
+}
+
 /*----------------------------1. BACKGROUND--------------------------*/
 .loginbg{
 	background-image: url('../../../assets/login-bg.jpg');
