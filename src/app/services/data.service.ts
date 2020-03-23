@@ -431,11 +431,11 @@ export class DataService {
       });
   }
 
-  beginSubscription(payload, planId): Observable<any> {
+  beginSubscription(payload, planId, user): Observable<any> {
     let headers = new Headers({ 'x-access-token': this.authenticationService.token });
     let options = new RequestOptions({ headers: headers });
     // get users from api
-    return this.http.post('api/braintree/subsribe', { paymentPayload: payload, planId: planId }, options)
+    return this.http.post('api/braintree/subsribe', { paymentPayload: payload, planId: planId, user: user }, options)
       .map((response: Response) => {
         if (response.json() && response.json().success) {
           return response.json();

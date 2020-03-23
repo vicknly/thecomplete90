@@ -43,6 +43,15 @@ export class AuthenticationService {
       });
   }
 
+  createClub(profile): Observable<any> {
+    return this.http.post('/api/createClubs', profile)
+      .map((response: Response) => {
+        return response.json();
+      });
+  }
+
+  
+
 
   clubSignup(payload): Observable<any> {
     return this.http.post('/api/clubSignup', payload)
