@@ -87,21 +87,27 @@ export class LoginSignupComponent implements OnInit {
     signUp() {
         console.log(this.model);
         if (!this.model.firstname || !this.model.lastname || 
-            !this.model.email || !this.model.password || !this.model.address || !this.model.postalcode ) {
+            !this.model.email || !this.model.password || !this.model.repassword || !this.model.address || !this.model.postalcode ) {
                 this.error = 'Make sure all required fields are completed!';
-            return;
+            return false;
         }
         if (!this.validateEmail(this.model.email)) {
             this.error = 'Please enter a valid email';
-            return;
+            return false;
         }
+
+        if (this.model.password != this.model.repassword) {
+            this.error = 'Passwords don\'t match. Please correct!';
+            return false;
+        }
+
         if (!this.validateBillingInfo(this.model.address, this.model.postalcode)){
             this.error = "Please enter a valid postal code and address!";
-            return 
+            return false;
         }
         if (this.createManagerProfile && !this.model.clubName) {
             this.error = 'Club name is required to create a manager profile';
-            return;
+            return false;
         }
         // this.loading = true;
 
@@ -199,7 +205,9 @@ export class LoginSignupComponent implements OnInit {
 
     selectPlan(type) {
 
-        this.signUp();
+        if (this.signUp() == false ) {
+            return;
+        }
     
         let id = '';
 

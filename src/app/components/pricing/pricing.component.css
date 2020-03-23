@@ -111,6 +111,20 @@ h3{
 	color: black;
 }
 
+/*----------------------------1. BANNER IMAGE--------------------------*/
+
+.bannerimage {
+    padding-top: 120px;
+    background-image: url('../../../assets/dashboard-banner.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 250px;
+    width: 100%;
+    color: white;
+}
+
+
 /*--------pricing table style--------*/
 .section-title h2 {
     	font-size: 32px;
@@ -243,7 +257,7 @@ a.box-btn:hover, a.border-btn:hover {
 	width: 50%;
 }
 
-div.sticky {
+.sticky {
 	position: -webkit-sticky; /* Safari */
 	position: sticky;
 	bottom: 0;

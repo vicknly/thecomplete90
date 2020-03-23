@@ -244,18 +244,18 @@
                                 <span class="fa fa-play-circle fa-3x" aria-hidden="true"></span>
                             </a>
 
-                            <a [routerLink]="['/login_signup']" *ngIf="!isLoggedIn() && content.alwaysActive !== true && !adminProfile" class="signup-to-view">
+                            <a [routerLink]="['/login_signup']" *ngIf="!isLoggedIn() && content.alwaysActive !== true && !adminProfile && !coachProfile" class="signup-to-view">
                                 <i class="fa fa-lock"></i>
                                 <span>Signup to View</span>  
                             </a>
 
-                            <a [routerLink]="['/pricing']" *ngIf="isLoggedIn() && !hasSubscription() && content.alwaysActive !== true && !adminProfile" class="signup-to-view">
+                            <a [routerLink]="['/pricing']" *ngIf="isLoggedIn() && !hasSubscription() && content.alwaysActive !== true && !adminProfile && !coachProfile" class="signup-to-view">
                                 <i class="fa fa-lock"></i>
                                 <span>Please buy subscription to have full access.</span>  
                             </a>
 
 
-                            <a [routerLink]="['/pricing']" *ngIf="isLoggedIn() && hasSubscription() && (user.subscription.planId=='player-monthly-amateur' || user.subscription.planId=='coach-monthly-amateur') && content.alwaysActive !== true && !adminProfile" class="signup-to-view">
+                            <a [routerLink]="['/pricing']" *ngIf="isLoggedIn() && hasSubscription() && (user.subscription.planId=='player-monthly-amateur' || user.subscription.planId=='coach-monthly-amateur') && content.alwaysActive !== true && !adminProfile && !coachProfile" class="signup-to-view">
                                 <i class="fa fa-lock"></i>
                                 <span>Upgrade your account to pro for full access</span>  
                             </a>
@@ -287,16 +287,16 @@
                                 <span class="fa fa-play-circle fa-3x" aria-hidden="true"></span>
                             </a>
 
-                            <a [routerLink]="['/login_signup']" *ngIf="!isLoggedIn() && content.alwaysActive !== true && !adminProfile" class="signup-to-view">
+                            <a [routerLink]="['/login_signup']" *ngIf="!isLoggedIn() && content.alwaysActive !== true && !adminProfile && !coachProfile" class="signup-to-view">
                                 <span>Signup to View</span>  
                             </a>
 
-                            <a [routerLink]="['/pricing']" *ngIf="isLoggedIn() && !hasSubscription() && content.alwaysActive !== true && !adminProfile" class="signup-to-view">
+                            <a [routerLink]="['/pricing']" *ngIf="isLoggedIn() && !hasSubscription() && content.alwaysActive !== true && !adminProfile && !coachProfile" class="signup-to-view">
                                 <span>Please buy subscription to have full access.</span>  
                             </a>
 
 
-                            <a [routerLink]="['/pricing']" *ngIf="isLoggedIn() && hasSubscription() && (user.subscription.planId=='player-monthly-amateur' || user.subscription.planId=='coach-monthly-amateur') && content.alwaysActive !== true && !adminProfile" class="signup-to-view">
+                            <a [routerLink]="['/pricing']" *ngIf="isLoggedIn() && hasSubscription() && (user.subscription.planId=='player-monthly-amateur' || user.subscription.planId=='coach-monthly-amateur') && content.alwaysActive !== true && !adminProfile && !coachProfile" class="signup-to-view">
                                 <span>Upgrade your account to pro for full access</span>  
                             </a>
                         </div>
@@ -318,7 +318,7 @@
     </div>
     
 
-    <div class="col-lg-12 exercise-section" *ngIf="hasSubscription() ||  adminProfile">
+    <div class="col-lg-12 exercise-section" *ngIf="hasSubscription() || adminProfile || coachProfile">
         <div class="exercise-title">
             <h1>Exercises</h1>
         </div>

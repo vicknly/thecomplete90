@@ -47,6 +47,9 @@
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" [(ngModel)]="model.password" name="password">
                 </div>
                 <div class="form-group col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 text-center">
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password" [(ngModel)]="model.repassword" name="repassword">
+                </div>
+                <div class="form-group col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 text-center">
                     <input class="form-control" id="Baddress" placeholder="Address" [(ngModel)]="model.address" name="address">
                 </div>
                 <div class="form-group col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 text-center">
@@ -58,7 +61,7 @@
                 </div> -->
 
 
-                <div class="form-grou col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 text-centerp">
+                <div class="planGroup form-group col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 text-centerp">
                     <label for="exampleFormControlSelect1" class="text-dark">Select Plan</label>
                     <select class="form-control" id="plan" name="planType" [(ngModel)]="planType">
                       <option value="amateur">Amateur</option>

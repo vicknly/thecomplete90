@@ -99,7 +99,8 @@ export class PricingComponent implements OnInit {
     this.setCycle('monthly');
   }
 
-  setTrial() {
+  setTrial(plan) {
+    this.planType = plan;
     this.isTrial = '-trial';
   }
 

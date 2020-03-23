@@ -204,7 +204,7 @@ export class DashboardComponent implements OnInit {
   loadProfile() {
     this.dataService.getUserProfile(false).subscribe(res => {
       this.onProfileUpdated(res.user);
-      console.log("User: ", this.user.subscription.planId);
+      //console.log("User: ", this.user.subscription.planId);
     });
   }
 
@@ -322,6 +322,7 @@ export class DashboardComponent implements OnInit {
     if (user) {
       this.user = user;
       this.user.avatarURL = user.avatarURL;
+      console.log(user);
       this.playerProfile = user.profiles.find(profile => {
         return profile.type === 'PLAYER';
       });

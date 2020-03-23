@@ -45,6 +45,10 @@ select {
 	color: black;
 }
 
+.planGroup {
+	display: none;
+}
+
 /*----------------------------1. BACKGROUND--------------------------*/
 .loginbg{
 	background-image: url('../../../assets/login-bg.jpg');

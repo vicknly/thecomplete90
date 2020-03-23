@@ -43,18 +43,19 @@
             </a>
             <input class="profile-input" *ngIf="editMode" [(ngModel)]="playerProfile.position" placeholder="Edit Position">
         </div>
-        <div class="item" *ngIf="profile">
+        <!-- <div class="item" *ngIf="profile">
             <a class="title">NATIONALITY:
                 <span *ngIf="!editMode" class="lowkey">{{ profile.nationality || ''}}</span>
             </a>
             <input class="profile-input" *ngIf="editMode" [(ngModel)]="profile.nationality" placeholder="Edit Nationality">
-        </div>
+        </div> -->
         <div class="item" *ngIf="coachProfile">
             <a class="title">COACHING LEVEL:
                 <span *ngIf="!editMode" class="lowkey">{{ coachProfile.level || ''}}</span>
             </a>
             <input class="profile-input" *ngIf="editMode" [(ngModel)]="coachProfile.level" placeholder="Edit Level">
         </div>
+        
     </div>
     <div class="edit-mode-controls" *ngIf="editMode">
         <button (click)="toggleEditMode()" class="cancel-btn">CANCEL</button>
