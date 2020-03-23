@@ -29,7 +29,7 @@ const appRoutes: Routes = [
     { path: 'about', component: AboutusComponent },
     { path: 'training', component: TrainingComponent },
     { path: 'pricing', component: PricingComponent },
-    { path: 'paynow', component: PaymentComponent, canActivate: [AuthGuard] },
+    { path: 'paynow', component: PaymentComponent},
     { path: 'sessions', component: SessionsComponent },
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
     { path: 'events', component: EventsComponent },
