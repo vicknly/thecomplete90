@@ -242,6 +242,11 @@ div{
 }
 
 
+.playerPromoImage, .coachPromoImage {
+	padding-top: 400px;
+}
+
+
 
 .coachPromo a{
 	font-size: 26px;
@@ -429,7 +434,8 @@ div{
 	.bannerimage{
 		padding-top: 90px;
 		min-height: 200px;
-	}	
+	}
+
 
 	.playerPromoText h1 {
 	    padding-top: 90px;

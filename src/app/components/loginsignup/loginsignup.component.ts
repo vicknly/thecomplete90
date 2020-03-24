@@ -25,7 +25,7 @@ export class LoginSignupComponent implements OnInit {
     coachPrice;
     plans = {};
     isCoach = false;
-    planType = 'pro';
+    planType = 'pro-trial';
     isTrial = '';
     disabled = true;
 

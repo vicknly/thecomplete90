@@ -248,6 +248,11 @@ video {
 
 
 /*-----------------------4. PLAYER/COACH SECTION---------------------------*/
+
+.playerPromoImage, .coachPromoImage {
+	padding-top: 400px;
+}
+
 .playerPromo{
 	background-color: #0e233e;
 }

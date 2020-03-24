@@ -30,10 +30,10 @@ export class ClubsComponent implements OnInit {
   ngOnInit() {
     this.getClubs();
     this.loadProfile();
-    if(!this.adminProfile) {
-      this.router.navigate(['/']);
-    }
-    
+    // if(!this.adminProfile) {
+    //   this.router.navigate(['/']);
+    // }
+    //console.log("Admin: ", this.adminProfile);
   }
 
   loadProfile() {
@@ -55,7 +55,9 @@ export class ClubsComponent implements OnInit {
         return profile.type === 'MANAGER';
       });
       this.adminProfile = user.profiles.find(profile => {
-        return profile.type === 'admin';
+        if( profile.type !== 'admin' ) {
+          this.router.navigate(['/']);
+        }
       });
     } else {
       // this.loadProfile();
