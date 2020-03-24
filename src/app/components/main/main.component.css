@@ -274,7 +274,7 @@ video {
 }
 
 .playerPromoText h1{
-	padding-top: 170px;
+	padding-top: 145px;
 	padding-left: 95px;
 	padding-bottom: 20px;
 	font-size: 24px;
@@ -330,7 +330,7 @@ video {
 }
 
 .coachPromoText h1{
-	padding-top: 170px;
+	padding-top: 145px;
 	padding-left: 95px;
 	padding-bottom: 20px;
 	font-size: 24px;
@@ -492,6 +492,10 @@ video {
 
 
 /* MAILCHIMPS */
+.subscribe-img {
+	width: 80%;
+	margin-top: 15px;
+}
 .newsletter-section {
 	background-color: #fbfbff !important;
 }
