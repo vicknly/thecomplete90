@@ -88,6 +88,7 @@ div{
 
 .aboutDesc p{
 	padding-top: 25px;
+	padding-bottom: 110px;
 }
 
 .rightDesc img{
@@ -204,7 +205,7 @@ div{
 }
 
 .playerPromoText h1{
-	padding-top: 170px;
+	padding-top: 145px;
 	padding-left: 95px;
 	padding-bottom: 20px;
 	font-size: 24px;
@@ -260,7 +261,7 @@ div{
 }
 
 .coachPromoText h1{
-	padding-top: 170px;
+	padding-top: 145px;
 	padding-left: 95px;
 	padding-bottom: 20px;
 	font-size: 24px;
