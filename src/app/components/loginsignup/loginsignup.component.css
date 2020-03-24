@@ -65,7 +65,7 @@ select {
 
 /*----------------------------2. LOGIN DIV--------------------------*/
 .login, .signup{
-	padding-top: 290px;
+	padding-top: 150px;
 	padding-bottom: 290px;
 	height: 100vh;
 }
@@ -104,6 +104,14 @@ select {
 	border: 1px solid #fd1541;
 	/*border-radius: 0px;*/
 	border:none;	
+}
+
+.email {
+	margin-top: 40px;
+}
+
+.repass {
+	margin-bottom: 40px;
 }
 
 
